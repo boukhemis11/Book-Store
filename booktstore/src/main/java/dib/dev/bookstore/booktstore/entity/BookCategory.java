@@ -26,19 +26,19 @@ import lombok.ToString;
  */
 
 @Entity
-@Table
+@Table(name="category")
 @Setter
 @Getter
 @ToString
 public class BookCategory {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name="category_name")
 	private String categoryName;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="category")
+	@OneToMany(mappedBy="category")
 	private Set<Book> books;
 }

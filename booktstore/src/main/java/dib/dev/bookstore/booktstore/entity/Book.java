@@ -25,13 +25,14 @@ import lombok.ToString;
  */
 
 @Entity
-@Table
+@Table(name="book")
 @Setter
 @Getter
 @ToString
 public class Book {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	private String sku;
@@ -58,6 +59,6 @@ public class Book {
 	private Date updatedOn;
 
 	@ManyToOne
-	@JoinColumn(name="category_id", nullable=false)
+	@JoinColumn
 	private BookCategory category;
 }
