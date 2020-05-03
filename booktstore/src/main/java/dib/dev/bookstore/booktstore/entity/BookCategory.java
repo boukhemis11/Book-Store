@@ -40,5 +40,5 @@ public class BookCategory {
 	private String categoryName;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="category")
-	private Set<Book> book;
+	private Set<Book> books;
 }
